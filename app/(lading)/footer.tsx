@@ -11,7 +11,7 @@ export const Footer: FC = () => {
       <div className="flex items-center justify-center">
         <Image alt="Logo" src="/logo_icon.png" width={90} height={90} />
       </div>
-      <div className="flex items-center justify-between px-4">
+      <div className="flex md:flex-row flex-col gap-y-10 max-w-screen-lg mx-auto md:gap-x-20 items-center justify-between">
         <FooterItem label="Redes Sociais">
           <p className="text-white text-sm">Copyright © Lider Automação 2023</p>
           <div className="flex items-center gap-x-2">

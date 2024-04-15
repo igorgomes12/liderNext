@@ -24,7 +24,7 @@ export const Header: FC = () => {
     <header className="h-20 w-full px-4 bg-primaryLeader">
       <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
         <div className="pt-8 pl-4 pb-7">
-          <Image src="/logo.png" alt="logo" width={120} height={120} />
+          <Image src="/logo.png" alt="logo" width={200} height={120} />
         </div>
         <nav className="md:flex text-white hidden items-center">
           {navItems.map((item) => (
