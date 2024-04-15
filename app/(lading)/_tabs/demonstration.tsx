@@ -12,11 +12,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { FC } from "react";
+
 export const Demonstration: FC = () => {
   return (
-    <div className="flex w-full gap-8 items-center px-8 justify-around">
-      <div className="w-80 flex mb-10  flex-col gap-4">
-        <span className="uppercase text-slate-700 font-medium text-4xl">
+
+    <div className="flex w-full gap-8 py-8 items-center px-8 justify-around">
+      <div className="w-80 flex mb-10 flex-col gap-4">
+        <span className="uppercase text-muted-foreground font-medium text-4xl">
           Solicite uma demonstração
         </span>
         <Separator />
@@ -38,7 +40,7 @@ export const Demonstration: FC = () => {
         </div>
         <Select>
           <SelectTrigger className="max-w-sm">
-            <SelectValue placeholder="" />
+            <SelectValue placeholder="Selecionar" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -59,7 +61,7 @@ export const Demonstration: FC = () => {
           <Label htmlFor="estado">Estado</Label>
           <Input type="text" id="estado" placeholder="Estado" />
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center w-full justify-center gap-2">
           <Button variant="primaryLeader" size="lg" className="text-white">
             Revenda
           </Button>
@@ -72,12 +74,15 @@ export const Demonstration: FC = () => {
           Enviar
         </Button>
       </div>
-      <Image
-        alt="imagem info"
-        src="/backgrounds/background_PNG/background_3.png"
-        width={800}
-        height={180}
-      />
+      <div className="flex items-center justify-center">
+        <Image
+          alt="imagem info"
+          src="/backgrounds/background_PNG/background_3.png"
+          width={900}
+          height={300}
+          
+        />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ type Props = {
 };
 export const Heading: FC<Props> = ({ title, invert }) => {
   return (
-    <h1 className={cn("font-bold text-5xl", invert && "text-white")}>
+    <h1 className={cn("font-semibold text-5xl", invert && "text-white")}>
       {title}
     </h1>
   );

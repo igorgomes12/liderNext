@@ -23,7 +23,7 @@ export const Values: FC = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-y-6 mb-10 w-full items-center justify-center">
+    <div className="flex flex-col gap-y-6 mb-10 py-20 w-full items-center justify-center">
       <Heading title="Nossos valores" />
       <Separator />
       <div className="flex flex-row gap-8 justify-between items-center">

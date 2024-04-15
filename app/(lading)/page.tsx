@@ -1,5 +1,6 @@
 import { Contact } from "./_tabs/contact";
 import { Demonstration } from "./_tabs/demonstration";
+import { Depositions } from "./_tabs/depositions";
 import { Info } from "./_tabs/info";
 import { Leader } from "./_tabs/leader";
 import { Maps } from "./_tabs/maps";
@@ -16,6 +17,7 @@ export default function Home() {
       <Demonstration />
       <Maps />
       <Contact />
+      <Depositions/>
     </div>
   );
 }
