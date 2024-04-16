@@ -1,7 +1,6 @@
 import { Separator } from "@/components/ui/separator"
 import { FC } from "react"
 import CarouselComponent from "@/components/carousel-component"
-import Image from "next/image";
 
 const testimonials = [
     {

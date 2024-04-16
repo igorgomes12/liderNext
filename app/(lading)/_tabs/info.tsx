@@ -5,7 +5,7 @@ import { FC } from "react";
 
 export const Info: FC = () => {
   return (
-    <div className="flex w-full justify-center gap-8">
+    <div className="flex w-full py-16 justify-center gap-8">
       <div className="flex w-96 flex-col items-center justify-center gap-6">
         <span className="uppercase  text-slate-700 font-medium text-5xl">
           Seu Caminho entrelaçado com inovação!

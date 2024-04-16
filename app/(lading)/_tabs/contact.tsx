@@ -16,12 +16,12 @@ export const Contact: FC<Props> = ({ }) => {
         <Separator />
         <div className="flex flex-col w-full gap-4 py-4 px-4 items-start justify-start ">
           <ContactOptions
-            icon={PhoneCall}
+            icon={MapPin}
             description="Av. Antonio Guimarães, 67 - Sala 1 - Itapebussu Guarapari - ES -
           Brasil"
           />
           <ContactOptions
-            icon={MapPin}
+            icon={PhoneCall}
             description="(27) 3362-1477 / (27) 99960-5548"
           />
           <ContactOptions

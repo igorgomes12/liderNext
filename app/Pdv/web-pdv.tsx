@@ -1,15 +1,16 @@
 "use client"
+import { FC } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { FC } from "react";
 
-export const WebLider: FC = () => {
+export const WebPDV: FC = () => {
     return (
       <div className="flex w-full justify-between gap-2">
         <div className="flex w-6/12 p-10 flex-col items-start justify-center gap-4">
           <span className="text-muted-foreground font-medium text-5xl">
-           WebLider
+          WebPDV
           </span>
           <Separator />
           <p className="text-md text-muted-foreground">
@@ -21,8 +22,8 @@ export const WebLider: FC = () => {
         </div>
         <Image
           alt="imagem info"
-          src="/backgrounds/background_PNG/Web-lider.png"
-          width={600}
+          src="/backgrounds/background_PNG/background_1.png"
+          width={700}
           height={180}
         />
       </div>

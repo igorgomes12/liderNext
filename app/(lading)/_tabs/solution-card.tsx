@@ -1,90 +1,74 @@
-"use client"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Separator } from "@/components/ui/separator";
-import Autoplay from "embla-carousel-autoplay"
+"use client";
+
 import Image from "next/image";
+
+import Autoplay from "embla-carousel-autoplay";
+
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { useRef } from "react";
 
-import { FC } from "react";
-
-const cards = [
-    {
-        description: "Uma solução perfeita para seu negócio!, A Lider WebFood é uma plataforma para o funcionamento perfeito de todo o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.",
-        title: "WebFood",
-        link: "",
-        img: "/backgrounds/Web-food.png",
-    },
-    {
-        description: "Uma solução perfeita para seu negócio!, A Lider WebFood é uma plataforma para o funcionamento perfeito de todo o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.",
-        title: "WebTransporte",
-        link: "",
-        img: "/backgrounds/Web-transporte.jpg",
-    },
-    {
-        description: "Uma solução perfeita para seu negócio!, A Lider WebFood é uma plataforma para o funcionamento perfeito de todo o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.",
-        title: "WebDelivery",
-        link: "",
-        img: "/backgrounds/Web-delivery.jpg",
-    },
-    {
-        description: "Uma solução perfeita para seu negócio!, A Lider WebFood é uma plataforma para o funcionamento perfeito de todo o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.",
-        title: "WebPDV",
-        link: "",
-        img: "/backgrounds/Web-pdv.png",
-    },
-    {
-        description: "Uma solução perfeita para seu negócio!, A Lider WebFood é uma plataforma para o funcionamento perfeito de todo o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.",
-        title: "WebLider",
-        link: "/Lider",
-        img: "/backgrounds/Web-lider.jpeg",
-    },
-];
-
-export const SolutionCard: FC = () => {
-    const plugin = useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: true })
-    )
-    return (
-        <section className="w-full">
-            <div className="mx-auto lg:max-w-6xl px-3">
-                <Carousel
-                orientation="horizontal"
-                    className="w-full max-w-sm"
-                    opts={{
-                        loop: true,
-                        align: "start",
-                    }}
-                    plugins={[
-                        Autoplay({
-                            delay: 4000,
-                        }),
-                    ]}
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent>
-                        {cards?.map((item, i) => (
-                            <CarouselItem key={`solution_${item.title}-${i}`}>
-                                <Link href={item.link}>
-                                <div  className="flex w-96 bg-gradient-to-b rounded-md from-primaryLeader to-white flex-col gap-4 px-4 py-4 ">
-                                    <div className="flex-1">
-                                        <Image  alt="test" src={item.img} className="flex rounded-xl items-center justify-center w-full" width={180} height={120} />
-                                    </div>
-                                    <div className="flex flex-col justify-center items-center gap-2 px-2">
-                                        <h1 className="text-muted-foreground text-2xl hover:text-black font-bold">{item.title}</h1>
-                                        <Separator />
-                                    </div>
-                                    <p className="text-md font-normal text-muted-foreground">{item.description}</p>
-                                </div>
-                                </Link>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 fill-black" />
-                    <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 fill-black" />
-                </Carousel>
-            </div>
-        </section>
-    )
+interface ISolutionCardProps {
+    cards: {
+        description: string;
+        title: string;
+        link: string;
+        img: string;
+    }[]
 }
+
+export default function SolutionCard({
+    cards,
+}: ISolutionCardProps) {
+    return (
+        <>
+            <section className="w-full ">
+                <div className="lg:max-w-6xl ">
+                    <Carousel
+                        opts={{
+                            loop: true,
+                            align: "start",
+                        }}
+                        plugins={[
+                            Autoplay({
+                                delay: 2000,
+                            }),
+                        ]}
+                    >
+                        <CarouselContent>
+                            {cards.map((items, index) => (
+                                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                                    <Link href={items.link}>
+                                    <div className="flex flex-col hover:scale-105 rounded-xl shadow-xl hover:shadow-muted-foreground fill-transparent w-full h-full px-2 py-2 sm:p-6">
+                                        <div className="flex">
+                                            <Image alt="test" src={items.img} className="flex rounded-xl items-center justify-center w-full h-52" width={180} height={110} />
+                                        </div>
+                                        <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-md md:text-lg hover:text-muted-foreground lg:text-2xl font-bold py-2 px-2 ">{items.title}</h1>
+                                            <Separator/>
+                                        </div>
+                                        <div className="mt-6 flex gap-3">
+                                            <span className="inline-flex rounded-full">
+                                                {items.description}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    </Link>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 fill-black" />
+                        <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 fill-black" />
+                    </Carousel>
+                </div>
+            </section>
+        </>
+    );
+}
+

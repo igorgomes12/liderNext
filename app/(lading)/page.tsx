@@ -3,7 +3,7 @@ import { Demonstration } from "./_tabs/demonstration";
 import { Depositions } from "./_tabs/depositions";
 import { Info } from "./_tabs/info";
 import { Leader } from "./_tabs/leader";
-import { Maps } from "./_tabs/maps";
+import Map from "./_tabs/map";
 import { Solution } from "./_tabs/solution";
 import { Values } from "./_tabs/values";
 
@@ -15,9 +15,11 @@ export default function Home() {
       <Leader />
       <Values />
       <Demonstration />
-      <Maps />
+      <div className="px-2 w-full">
+        <Map center={[-20.662688, -40.502052]} />
+      </div>
       <Contact />
-      <Depositions/>
+      <Depositions />
     </div>
   );
 }

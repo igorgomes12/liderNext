@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { Heading } from "../(lading)/_tabs/heading";
 import { Separator } from "@/components/ui/separator";
-import { OptionsLider } from "./options-lider";
+import { Options } from "./options-lider";
 import { Check } from "lucide-react";
 
 export const InfoWebLider: FC = () => {
@@ -22,10 +22,10 @@ export const InfoWebLider: FC = () => {
                     <Heading title="WebLider" />
                     <Separator/>
                     <span className="text-md text-black">Sistema de gestão completo para o comercio varejista, prestadores de serviços e controle de produção toda a gestão de sua empresa com armazenamento de dados em nuvem</span>
-                    <OptionsLider icon={Check} description="Aplicativo móvel disponível para Android e IOS"/>
-                    <OptionsLider icon={Check} description="Relatórios gerenciais específicos"/>
-                    <OptionsLider icon={Check} description="Controle financeiro integrado e automatizado"/>
-                    <OptionsLider icon={Check} description="AControle de filiais centralizado"/>
+                    <Options icon={Check} description="Aplicativo móvel disponível para Android e IOS"/>
+                    <Options icon={Check} description="Relatórios gerenciais específicos"/>
+                    <Options icon={Check} description="Controle financeiro integrado e automatizado"/>
+                    <Options icon={Check} description="AControle de filiais centralizado"/>
                 </div>
         </div>
 

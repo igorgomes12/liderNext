@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { FC } from "react";
 import { MobileMenu } from "./mobile-menu";
+import Link from "next/link";
 
 export const Header: FC = () => {
   const navItems = [
@@ -17,20 +18,24 @@ export const Header: FC = () => {
     { label: "Soluções", icon: SquareCheckBigIcon, href: "/solucoes" },
     { label: "Represetante", icon: UserIcon, href: "/representante" },
     { label: "Contato", icon: ContactIcon, href: "/contato" },
-    { label: "Contratação", icon: CircleFadingPlusIcon, href: "/contratacao" },
+    { label: "Contratação", icon: CircleFadingPlusIcon, href: "/Contract" },
   ];
 
   return (
     <header className="h-20 w-full px-4 bg-primaryLeader">
       <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
         <div className="pt-8 pl-4 pb-7">
-          <Image src="/logo.png" alt="logo" width={200} height={120} />
+          <Link href={"/"}>
+            <Image src="/logo.png" alt="logo" width={200} height={120} />
+          </Link>
         </div>
         <nav className="md:flex text-white hidden items-center">
           {navItems.map((item) => (
-            <Button key={item.href} variant="ghost" size="sm">
-              {item.label}
-            </Button>
+            <Link key={item.label} href={item.href}>
+              <Button  variant="ghost" size="sm">
+                {item.label}
+              </Button>
+            </Link>
           ))}
           <Button variant="secondaryLeader" className="ml-2">
             Agendar demonstração
