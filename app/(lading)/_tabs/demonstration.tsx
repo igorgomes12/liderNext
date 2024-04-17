@@ -2,7 +2,6 @@
 import { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -17,6 +16,7 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 
 const DemonstrationSchema = z.object({
   name: z.string().nonempty("Favor preencher o campo!"),
@@ -30,11 +30,7 @@ const DemonstrationSchema = z.object({
 export type TDemonstrationData = z.infer<typeof DemonstrationSchema>;
 
 export const Demonstration: FC = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<TDemonstrationData>({
+  const form = useForm<TDemonstrationData>({
     resolver: zodResolver(DemonstrationSchema),
     defaultValues: {
       city: "",
@@ -51,8 +47,9 @@ export const Demonstration: FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-8 py-8 items-center px-8 justify-around">
-      <form onSubmit={handleSubmit(SubmitHandler)} className="w-full lg:w-80">
+    <div id="demonstracao" className="flex flex-col lg:flex-row w-full gap-8 py-24 items-center px-8 justify-around">
+      <Form {...form}>
+      <form onSubmit={form.handleSubmit(SubmitHandler)} className="w-full lg:w-80">
         <div className="flex flex-col gap-4">
           <span className="uppercase text-muted-foreground font-medium text-4xl">
             Solicite uma demonstração
@@ -62,35 +59,49 @@ export const Demonstration: FC = () => {
             Quer saber mais? Podemos atender o seu negócio da melhor forma,
             entre em contato!
           </p>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="name">Nome Completo</Label>
-            <Input
-              {...register("name")}
-              type="text"
-              id="name"
-              placeholder="Nome"
-            />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              {...register("email")}
-              type="email"
-              id="email"
-              placeholder="Email"
-            />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="Whatsapp">Whatsapp</Label>
-            <Input
-              {...register("whatsApp")}
-              type="text"
-              id="Whatsapp"
-              placeholder="Whatsapp"
-            />
-          </div>
-          <div className="max-w-sm">
-            <Select {...register("module")}>
+          <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="Nome Completo" {...field} />
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+          <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="E-mail" {...field} />
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+          <FormField
+          control={form.control}
+          name="whatsApp"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="WhatsApp" {...field} />
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+          <FormField
+          control={form.control}
+          name="module"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+              <Select onValueChange={field.onChange} >
               <SelectTrigger>
                 <SelectValue placeholder="Selecionar" />
               </SelectTrigger>
@@ -105,37 +116,47 @@ export const Demonstration: FC = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="cidade">Cidade</Label>
-            <Input
-              {...register("city")}
-              type="text"
-              id="cidade"
-              placeholder="Cidade"
-            />
-          </div>
-          <div className="grid w-full max-w-sm items-center gap-1.5">
-            <Label htmlFor="estado">Estado</Label>
-            <Input
-              {...register("state")}
-              type="text"
-              id="estado"
-              placeholder="Estado"
-            />
-          </div>
-          <div className="flex flex-col lg:flex-row w-full max-w-sm gap-2">
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+         <FormField
+          control={form.control}
+          name="city"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="Cidade" {...field} />
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+         <FormField
+          control={form.control}
+          name="state"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="Estado" {...field} />
+              </FormControl>              
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+          <div className="flex flex-col lg:flex-row w-full gap-2">
             <Button
               variant="primaryLeader"
               size="lg"
-              className="text-white w-full lg:w-auto"
+              className="text-white w-full "
             >
               Revenda
             </Button>
             <Button
               variant="primaryLeader"
               size="lg"
-              className="text-white w-full lg:w-auto mt-2 lg:mt-0"
+              className="text-white w-full "
             >
               Representante
             </Button>
@@ -144,12 +165,13 @@ export const Demonstration: FC = () => {
             type="submit"
             variant="secondaryLeader"
             size="lg"
-            className="text-white w-full max-w-sm"
+            className="text-white w-full"
           >
             Enviar
           </Button>
         </div>
       </form>
+      </Form>
       <div className="hidden lg:flex items-center justify-center">
         <Image
           alt="imagem info"

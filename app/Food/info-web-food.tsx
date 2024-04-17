@@ -33,7 +33,7 @@ export const InfoWebFood: FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileOrTablet(window.innerWidth <= 1366); // Define largura limite para dispositivos móveis e tablets
+      setIsMobileOrTablet(window.innerWidth <= 1366); // Define a largura limite para dispositivos móveis e tablets
     };
 
     handleResize();
@@ -42,7 +42,7 @@ export const InfoWebFood: FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full bg-gradient-to-b from-primaryLeader/80 to-slate-100 px-8 lg:px-20 py-8 justify-between gap-2">
+    <div className="flex flex-col lg:flex-row w-full bg-gradient-to-b from-primaryLeader/80 to-slate-100 px-8 py-3 lg:px-20 lg:py-8 justify-between gap-2">
       {!isMobileOrTablet && (
         <div className="flex w-6/12 px-8 py-8 items-start justify-center">
           <Image
@@ -54,7 +54,7 @@ export const InfoWebFood: FC = () => {
         </div>
       )}
       <div
-        className={`flex flex-col items-start w-full lg:w-6/12 justify-start gap-6 py-8 px-8 ${
+        className={`flex flex-col items-start w-full lg:w-6/12 justify-start gap-4 lg:gap-6 lg:py-8 px-8 ${
           isMobileOrTablet ? "lg:pl-8" : ""
         }`}
       >

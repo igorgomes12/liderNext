@@ -6,10 +6,18 @@ import { WebPDV } from "./web-pdv";
 export default function PDV() {
     return (
         <div className="w-full flex flex-col">
-            <WebPDV/>
-            <InfoWebPDV/>
-            <PraticsSystemPDV/>
-            <Demonstration />
+            <div className="grow">
+                <WebPDV />
+            </div>
+            <div className="grow">
+                <InfoWebPDV />
+            </div>
+            <div className="grow">
+                <PraticsSystemPDV />
+            </div>
+            <div className="grow">
+                <Demonstration />
+            </div>
         </div>
     );
 }

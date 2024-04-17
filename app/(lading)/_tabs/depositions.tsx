@@ -33,7 +33,7 @@ export const Depositions: FC = () => {
   return (
     <div className="flex flex-col bg-transparent mb-10 items-center justify-center lg:justify-around lg:flex-row gap-8">
       <div className="flex flex-col items-center justify-center gap-6 lg:w-1/2 w-full px-4">
-        <h1 className="uppercase text-5xl font-bold text-muted-foreground text-center lg:text-left">
+        <h1 className="uppercase text-3xl lg:text-5xl font-bold text-muted-foreground text-center lg:text-left">
           Depoimentos
         </h1>
         <Separator />

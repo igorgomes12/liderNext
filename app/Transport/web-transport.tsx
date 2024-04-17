@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export const WebTransport: FC = () => {
     return (
-        <div className="flex w-full justify-between gap-2">
-            <div className="flex w-6/12 p-10 flex-col items-start justify-center gap-4">
+        <div className="flex w-full justify-center gap-2">
+            <div className="flex w-full lg:w-6/12 p-10 flex-col items-center lg:items-start justify-center gap-4">
                 <span className="text-muted-foreground font-medium text-5xl">
                     WebTransporte
                 </span>
@@ -20,12 +20,14 @@ export const WebTransport: FC = () => {
                     Agendar demonstração
                 </Button>
             </div>
+            <div className="lg:flex hidden">
             <Image
                 alt="imagem info"
                 src="/backgrounds/background_PNG/Web-transporte.png"
                 width={990}
                 height={380}
             />
+            </div>
         </div>
     );
 };

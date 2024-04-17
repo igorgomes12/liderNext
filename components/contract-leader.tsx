@@ -11,8 +11,8 @@ import { Input } from "./ui/input";
 const formContractSchema = z.object({
     name: z.string(),
     email: z.string(),
-    phone: z.number(),
-    cellPhone: z.number(),
+    phone: z.string(),
+    cellPhone: z.string(),
     pdf:z.string()
 })
 
@@ -25,8 +25,8 @@ export const ContractLeader: FC = () => {
         defaultValues: {
             name: "",
             email: "",
-            phone: 0,
-            cellPhone: 0
+            phone: "",
+            cellPhone: ""
         },
     })
 

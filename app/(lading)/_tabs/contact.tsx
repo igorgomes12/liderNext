@@ -4,11 +4,9 @@ import { FC } from "react";
 import { ContactOptions } from "./contact-options";
 import { FormContact } from "./form-contact";
 
-type Props = {};
-
-export const Contact: FC<Props> = ({}) => {
+export const Contact: FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full lg:w-10/12 gap-4 py-20 px-10 items-center justify-between">
+    <div id="contato" className="flex flex-col lg:flex-row w-full lg:w-10/12 gap-4 py-24 lg:py-28 px-10 items-center justify-between">
       <div className="flex flex-col lg:w-96 mb-10 items-center justify-center gap-4">
         <span className="text-3xl font-bold text-muted-foreground uppercase text-center lg:text-left">
           Quer saber mais? Solicite um contato

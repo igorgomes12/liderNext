@@ -9,7 +9,7 @@ export const Info: FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileOrTablet(window.innerWidth <= 1366); // Define largura limite para dispositivos móveis e tablets
+      setIsMobileOrTablet(window.innerWidth <= 1366);
     };
 
     handleResize();
@@ -18,8 +18,8 @@ export const Info: FC = () => {
   }, []);
 
   return (
-    <div className="flex  items-center justify-center gap-8 py-16 px-8 lg:px-0">
-      <div className="flex w-5/12 flex-col items-center justify-center gap-6 px-4 text-center">
+    <div className="flex items-center justify-center gap-8 py-28 lg:py-20 px-8 lg:px-8">
+      <div className="flex md:w-8/12 lg:w-5/12 flex-col items-center justify-center gap-6 px-4 text-center">
         <span className="uppercase text-slate-700 font-medium text-3xl md:text-4xl lg:text-5xl">
           Seu Caminho entrelaçado com inovação!
         </span>

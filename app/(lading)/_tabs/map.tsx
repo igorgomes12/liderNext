@@ -34,7 +34,7 @@ const Map: FC<MapProps> = ({ center }) => {
     <MapContainer
       center={(center as L.LatLngExpression) || [-20, -45]}
       zoom={center ? 13 : 2}
-      className="h-[50vh] rounded-lg cursor-default"
+      className="h-[50vh] -z-10 rounded-lg cursor-default"
     >
       <TileLayer
         attribution='&copy; <a href="http://maps.gstatic.com/">OpenStreetMap</a> contributors'

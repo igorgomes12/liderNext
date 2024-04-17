@@ -24,8 +24,8 @@ const infoFood = [
 
 export const InfoWebNotas: FC = () => {
     return (
-        <div className="flex w-full bg-gradient-to-b from-primaryLeader/80 to-slate-100 px-20 py-10 justify-between gap-2">
-            <div className="flex w-6/12 px-8 py-8 items-start justify-center ">
+        <div className="flex w-full bg-gradient-to-b from-primaryLeader/80 to-white lg:px-20 lg:py-10 justify-center gap-2">
+            <div className="hidden lg:flex w-full lg:w-6/12 px-8 py-8 items-start justify-center ">
                 <Image
                     alt="imagem info"
                     src="/imagensOfProduct/Web_notas.png"
@@ -33,9 +33,9 @@ export const InfoWebNotas: FC = () => {
                     height={180}
                 />
             </div>
-            <div className="flex flex-col items-start w-6/12 justify-start gap-6 py-8 px-8">
-                <Heading title="Nossa missão é desenvolver soluções eficazes para otimizar o seu negócio." />
-                <Separator />
+            <div className="flex flex-col items-start w-full lg:w-6/12 justify-start gap-4 lg:gap-6 lg:py-8 px-8">
+                <Heading title="Nossa missão é desenvolver soluções eficazes para otimizar o seu negócio." />             
+                <Separator />           
                 <span className="text-md text-black">O WebNotas é uma plataforma perfeita para o seu negócio. Nosso objetivo é oferecer o melhor serviço para você e seus clientes.</span>
                 {infoFood.map((item, i) => (
                     <Options key={`infoFood_${item.icon}-${i}`} icon={item.icon} description={item.description} />

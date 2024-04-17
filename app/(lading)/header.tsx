@@ -14,15 +14,15 @@ import Link from "next/link";
 
 export const Header: FC = () => {
   const navItems = [
-    { label: "A Líder", icon: HomeIcon, href: "/" },
-    { label: "Soluções", icon: SquareCheckBigIcon, href: "/solucoes" },
-    { label: "Represetante", icon: UserIcon, href: "/representante" },
-    { label: "Contato", icon: ContactIcon, href: "/contato" },
+    { label: "A Líder", icon: HomeIcon, href: "/#lider" },
+    { label: "Soluções", icon: SquareCheckBigIcon, href: "/#solucoes" },
+    { label: "Representante", icon: UserIcon, href: "/#demonstracao" },
+    { label: "Contato", icon: ContactIcon, href: "/#contato" },
     { label: "Contratação", icon: CircleFadingPlusIcon, href: "/Contract" },
   ];
 
   return (
-    <header className="h-20 w-full px-4 bg-primaryLeader">
+    <header className="fixed z-30 h-20 w-full px-4 bg-primaryLeader">
       <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
         <div className="pt-8 pl-4 pb-7">
           <Link href={"/"}>
@@ -37,9 +37,11 @@ export const Header: FC = () => {
               </Button>
             </Link>
           ))}
+          <Link href={"/#demonstracao"}>
           <Button variant="secondaryLeader" className="ml-2">
             Agendar demonstração
           </Button>
+          </Link>
         </nav>
         <div className="md:hidden block">
           <MobileMenu items={navItems} />

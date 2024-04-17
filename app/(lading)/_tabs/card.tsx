@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator";
 import { FC } from "react";
 
 type Props = {
@@ -9,7 +8,7 @@ type Props = {
 export const Card: FC<Props> = ({ title, description }) => {
   return (
     <div className="bg-primaryLeader hover:scale-105 transition-all shadow-slate-600 shadow-xl text-white flex flex-col text-center justify-center py-4 px-4 gap-y-2 w-80 rounded-md ">
-      <h1 className="uppercase  text-xl font-bold">{title}</h1>
+      <h1 className="uppercase text-xl font-bold">{title}</h1>
       <p className="text-md">{description}</p>
     </div>
   );

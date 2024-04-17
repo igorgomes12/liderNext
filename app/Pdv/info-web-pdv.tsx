@@ -10,7 +10,7 @@ import { Options } from "../Leader/options-lider";
 export const InfoWebPDV: FC = () => {
     return (
         <div className="flex w-full bg-gradient-to-b from-primaryLeader/80 to-slate-100 px-20 py-10 justify-between gap-2">
-            <div className="flex w-6/12 px-8 py-8 items-start justify-center ">
+            <div className="hidden lg:flex w-full lg:w-6/12 px-8 py-8 items-start justify-center">                
                 <Image
                     alt="imagem info"
                     src="/imagensOfProduct/Web-PDV.png"
@@ -18,7 +18,7 @@ export const InfoWebPDV: FC = () => {
                     height={180}
                 />
             </div>
-                <div className="flex flex-col items-start w-6/12 justify-start gap-6 py-8 px-8">
+                <div className="flex flex-col items-start w-full lg:w-6/12 justify-start gap-6 lg:py-8 lg:px-8">
                     <Heading title="Melhor Opção para o seu caixa!" />
                     <Separator/>
                     <span className="text-md text-black">Faça venda com poucos cliques, simplifique seu processo, evite filas, tenha segurança nas informações do seu caixa, use WebLider PDV</span>

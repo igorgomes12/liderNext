@@ -10,7 +10,7 @@ export const WebNotas: FC = () => {
   const linkNotas = "https://webnotas.liderautomacao.srv.br/#contato"
   return (
     <div className="flex w-full px-10 py-20 justify-between gap-8">
-      <div className="flex w-10/12 flex-col items-start justify-center gap-4">
+      <div className="flex w-full lg:w-10/12 flex-col items-center lg:items-start justify-center gap-4">
         <span className="text-muted-foreground font-medium text-5xl">
           WebNotas
         </span>
@@ -23,12 +23,14 @@ export const WebNotas: FC = () => {
           </Button>
         </Link>
       </div>
+      <div className="lg:flex hidden">
       <Image
         alt="imagem info"
         src="/backgrounds/background_PNG/Web-notas.png"
         width={990}
         height={380}
       />
+      </div>
     </div>
   );
 };

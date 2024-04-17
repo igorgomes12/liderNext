@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Contract() {
     return (
-        <div className="w-full flex flex-col items-center justify-center gap-10 py-10">
+        <div className="w-full flex flex-col items-center justify-center gap-4 py-28">
             <Heading title="Faça parte da equipe. Envie seu currículo!" />
             <Separator />
             <ContractLeader />

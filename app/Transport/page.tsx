@@ -6,10 +6,18 @@ import { WebTransport } from "./web-transport";
 export default function Transport() {
     return (
         <div className="w-full flex flex-col">
-            <WebTransport />
-            <InfoWebTransport/>
-            <PraticsSystemTransport/>
-            <Demonstration />
+            <div className="grow">
+                <WebTransport />
+            </div>
+            <div className="grow">
+                <InfoWebTransport />
+            </div>
+            <div className="grow">
+                <PraticsSystemTransport />
+            </div>
+            <div className="grow">
+                <Demonstration />
+            </div>
         </div>
     );
 }

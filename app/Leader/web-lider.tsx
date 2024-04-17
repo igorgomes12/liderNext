@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export const WebLider: FC = () => {
     return (
-      <div className="flex w-full justify-between gap-2">
-        <div className="flex w-6/12 p-10 flex-col items-start justify-center gap-4">
+      <div id="lider" className="flex w-full justify-center gap-2">
+        <div className="flex w-96 lg:w-6/12 px-4 py-8 flex-col lg:items-start items-center justify-center gap-y-4">
           <span className="text-muted-foreground font-medium text-5xl">
            WebLider
           </span>
@@ -20,12 +20,14 @@ export const WebLider: FC = () => {
             Agendar demonstração
           </Button>
         </div>
+        <div className="hidden lg:flex">
         <Image
           alt="imagem info"
           src="/backgrounds/background_PNG/Web-lider.png"
           width={600}
           height={180}
         />
+        </div>
       </div>
     );
   };

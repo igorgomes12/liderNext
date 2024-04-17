@@ -7,10 +7,18 @@ import { WebNotas } from "./web-notas";
 export default function Grades() {
     return (
         <div className="w-full flex flex-col">
-           <WebNotas/>
-           <InfoWebNotas/>
-           <PraticsSystemNotas/>
-           <Demonstration />
+            <div className="grow">
+                <WebNotas />
+            </div>
+            <div className="grow">
+                <InfoWebNotas />
+            </div>
+            <div className="grow">
+                <PraticsSystemNotas />
+            </div>
+            <div className="grow">
+                <Demonstration />
+            </div>
         </div>
     );
 }
