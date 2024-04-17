@@ -4,12 +4,20 @@ import { PraticsSystemFood } from "./pratics-system-food";
 import { WebFood } from "./web-food";
 
 export default function Food() {
-    return (
-        <div className="w-full flex flex-col">
-            <WebFood />
-            <InfoWebFood/>
-            <PraticsSystemFood/>
-            <Demonstration />
-        </div>
-    );
+  return (
+    <div className="w-full flex flex-col">
+      <div className="flex-grow">
+        <WebFood />
+      </div>
+      <div className="flex-grow">
+        <InfoWebFood />
+      </div>
+      <div className="flex-grow">
+        <PraticsSystemFood />
+      </div>
+      <div className="flex-grow">
+        <Demonstration />
+      </div>
+    </div>
+  );
 }
